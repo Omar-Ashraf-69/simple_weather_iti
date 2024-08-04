@@ -12,7 +12,7 @@ class WeatherProvider extends ChangeNotifier {
   Future<void> getWeather(String cityName) async {
     var result = await weatherService.getWeather(cityName: cityName);
     result.fold(
-      (l) => errorMessage = l,
+      (l) => errorMessage = l.error,
       (r) => weather = r,
     );
     notifyListeners();
