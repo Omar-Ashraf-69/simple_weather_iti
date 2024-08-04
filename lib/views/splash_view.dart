@@ -4,7 +4,6 @@ import 'package:weather_task/utils/app_styles.dart';
 import 'package:weather_task/utils/assets.dart';
 import 'package:weather_task/utils/colors.dart';
 
-
 class SplashView extends StatefulWidget {
   const SplashView({super.key});
   static const String routeName = "/";
@@ -17,9 +16,15 @@ class _SplashViewState extends State<SplashView> {
   @override
   void initState() {
     super.initState();
+    timer();
+  }
+
+  Future<void> timer() async {
     FeatchingData(
+      // ignore: use_build_context_synchronously
       context: context,
     ).fetchWeatherData();
+    await Future.delayed(const Duration(seconds: 1), () {});
   }
 
   @override

@@ -6,7 +6,8 @@ import 'package:weather_task/utils/colors.dart';
 class CustomGridItem extends StatelessWidget {
   const CustomGridItem({
     super.key,
-    required this.item, required this.value,
+    required this.item,
+    required this.value,
   });
   final CustomGridItemModel item;
   final String value;
@@ -27,12 +28,12 @@ class CustomGridItem extends StatelessWidget {
           ),
           Image.asset(
             item.image,
-            height: 50,
+            height: MediaQuery.sizeOf(context).height * 0.055,
           ),
           const SizedBox(
             height: 2,
           ),
-           Text(
+          Text(
             value,
             style: AppStyles.valueStyle,
           ),

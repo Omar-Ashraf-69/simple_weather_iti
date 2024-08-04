@@ -18,7 +18,6 @@ class _CustomGridViewState extends State<CustomGridView> {
   List<String> items = [];
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     items = widget.gridItems.getGridItems();
   }
@@ -33,7 +32,7 @@ class _CustomGridViewState extends State<CustomGridView> {
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 2,
           mainAxisSpacing: 20,
-          childAspectRatio: 1.2,
+          childAspectRatio: 1.125,
           crossAxisSpacing: 20,
         ),
         itemCount: 6,

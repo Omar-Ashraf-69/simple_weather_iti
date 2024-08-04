@@ -1,8 +1,4 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
-import 'package:iconly/iconly.dart';
-import 'package:weather_task/constants/featching_data.dart';
 import 'package:weather_task/constants/get_weather_image.dart';
 import 'package:weather_task/models/grid_items_value.dart';
 import 'package:weather_task/models/weather/weather.dart';
