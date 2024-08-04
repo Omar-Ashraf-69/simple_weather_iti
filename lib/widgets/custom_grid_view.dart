@@ -4,7 +4,7 @@ import 'package:weather_task/models/grid_items_value.dart';
 import 'package:weather_task/widgets/custom_grid_item.dart';
 
 class CustomGridView extends StatefulWidget {
-  CustomGridView({
+  const CustomGridView({
     super.key,
     required this.gridItems,
   });
