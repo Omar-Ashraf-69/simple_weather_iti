@@ -1,4 +1,3 @@
-
 // ignore: must_be_immutable
 import 'package:flutter/material.dart';
 import 'package:iconly/iconly.dart';
@@ -36,28 +35,29 @@ class CustomTextField extends StatelessWidget {
   // ignore: non_constant_identifier_names
   InputDecoration TextFieldDecoration(BuildContext context) {
     return InputDecoration(
-        border: const OutlineInputBorder(
-          borderRadius: BorderRadius.all(
-            Radius.circular(24),
-          ),
-          borderSide: BorderSide.none,
+      border: const OutlineInputBorder(
+        borderRadius: BorderRadius.all(
+          Radius.circular(24),
         ),
-        fillColor: Colors.white,
-        filled: true,
-        suffixIcon: IconButton(
-          onPressed: () async {
+        borderSide: BorderSide.none,
+      ),
+      fillColor: Colors.white,
+      filled: true,
+      suffixIcon: IconButton(
+        onPressed: () async {
+          if (controller.text.isNotEmpty) {
             await FeatchingData(context: context)
                 .fetchWeatherData(cityName: controller.text);
-          },
-          icon: const Padding(
-            padding: EdgeInsets.only(right: 10.0),
-            child: Icon(IconlyLight.search),
-          ),
+          }
+        },
+        icon: const Padding(
+          padding: EdgeInsets.only(right: 10.0),
+          child: Icon(IconlyLight.search),
         ),
-        hintText: 'Search City',
-        contentPadding:
-            const EdgeInsets.symmetric(vertical: 12, horizontal: 20),
-        hintStyle: AppStyles.hintStyle,
-      );
+      ),
+      hintText: 'Search City',
+      contentPadding: const EdgeInsets.symmetric(vertical: 12, horizontal: 20),
+      hintStyle: AppStyles.hintStyle,
+    );
   }
 }
