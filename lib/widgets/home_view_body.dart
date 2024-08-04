@@ -1,4 +1,7 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
+import 'package:iconly/iconly.dart';
 import 'package:weather_task/constants/featching_data.dart';
 import 'package:weather_task/constants/get_weather_image.dart';
 import 'package:weather_task/models/grid_items_value.dart';
@@ -6,7 +9,7 @@ import 'package:weather_task/models/weather/weather.dart';
 import 'package:weather_task/utils/app_styles.dart';
 import 'package:weather_task/utils/colors.dart';
 import 'package:weather_task/widgets/custom_grid_view.dart';
-import 'package:weather_task/widgets/text_field_decoration.dart';
+import 'package:weather_task/widgets/custom_text_field.dart';
 
 class HomeViewBody extends StatelessWidget {
   const HomeViewBody({
@@ -26,23 +29,9 @@ class HomeViewBody extends StatelessWidget {
             child: Column(
               children: [
                 const SizedBox(
-                  height: 10,
+                  height: 14,
                 ),
-                SizedBox(
-                  width: MediaQuery.sizeOf(context).width * 0.7,
-                  child: TextField(
-                    style: const TextStyle(
-                      color: Colors.black,
-                      fontWeight: FontWeight.w500,
-                    ),
-                    onSubmitted: (value) async {
-                      await FeatchingData(context: context)
-                          .fetchWeatherData(cityName: value);
-                    },
-                    keyboardType: TextInputType.text,
-                    decoration: textFieldDecoration(),
-                  ),
-                ),
+                CustomTextField(),
                 const SizedBox(
                   height: 20,
                 ),
