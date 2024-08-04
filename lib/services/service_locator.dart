@@ -6,9 +6,12 @@ import 'package:weather_task/utils/api_service.dart';
 final getIt = GetIt.instance;
 
 void setupGetIt() {
-Dio setUpDio(){
+  Dio setUpDio() {
     final dio = Dio();
-     dio.interceptors.add(LogInterceptor(
+
+    dio.options.connectTimeout = const Duration(seconds: 10);
+    dio.options.receiveTimeout = const Duration(seconds: 10);
+    dio.interceptors.add(LogInterceptor(
       request: true,
       requestHeader: true,
       requestBody: true,
@@ -16,16 +19,13 @@ Dio setUpDio(){
       responseBody: true,
       error: true,
     ));
-    return  dio;
+    return dio;
   }
 
   getIt.registerLazySingleton<ApiService>(
     () => ApiService(setUpDio()),
   );
   getIt.registerLazySingleton<WeatherService>(
-    () => WeatherService(apiService:getIt<ApiService>()),
+    () => WeatherService(apiService: getIt<ApiService>()),
   );
-  
-  
-  
 }
