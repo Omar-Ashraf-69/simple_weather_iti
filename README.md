@@ -16,7 +16,7 @@ For help getting started with Flutter development, view the
 samples, guidance on mobile development, and a full API reference.
 ## Project Demo
 
-[Watch the demo video](videos/demo.mkv)
+[Watch the demo video](https://github.com/Omar-Ashraf-69/simple_weather_iti/blob/main/video/demo.mkv)
 <details class="details-reset border rounded-2" open=""><div class="vsc-controller vsc-hidden"></div>
   <summary class="px-3 py-2">
     <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-device-camera-video">
